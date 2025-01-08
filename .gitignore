@@ -1,0 +1,61 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# FastAPI
+*.sqlite3
+*.db
+*.log
+*.env
+.env.*
+config.yaml
+
+# IDEs
+.vscode/
+.idea/
+
+# PyCharm
+*.iml
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Teste
+*.coverage
+*.hypothesis/
+nosetests.xml
+coverage.xml
+*.log
+*.pot
+
+# Flask
+instance/
+*.bak
+
+# HTML
+*.css
+*.scss
+*.sass
+*.map
+*.html
+
+# Docker
+docker-compose.override.yml
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Pytest
+.cache/
