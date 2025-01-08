@@ -4,19 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Abilities</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #5E35B1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #5E35B1;
+            outline: none;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #5E35B1;
+            color: #fff;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4527A0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #e8eaf6;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #3E4A89;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Search Pokémon Abilities</h1>
-    <form action="/pokemon" method="post">
-        <input type="text" name="pokemon_name" placeholder="Enter Pokémon name" required>
-        <button type="submit">Buscar</button>
-    </form>
-    
-    <h2>Abilities:</h2>
-    <ul>
-        {% for ability in abilities %}
-            <li>{{ ability }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Pokédex</h1>
+        <form action="/pokemon" method="post">
+            <input type="text" name="pokemon_name" placeholder="Enter Pokémon name" required>
+            <button type="submit">Buscar</button>
+        </form>
+
+        <h2>Abilities:</h2>
+        <ul>
+            {% for ability in abilities %}
+                <li>{{ ability }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if abilities == ["Pokémon not found"] %}
+            <div class="error">Pokémon não encontrado! Tente novamente.</div>
+        {% endif %}
+    </div>
 </body>
 </html>
