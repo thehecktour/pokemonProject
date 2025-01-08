@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Abilities</title>
+</head>
+<body>
+    <h1>Search Pokémon Abilities</h1>
+    <form action="/pokemon" method="post">
+        <input type="text" name="pokemon_name" placeholder="Enter Pokémon name" required>
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <h2>Abilities:</h2>
+    <ul>
+        {% for ability in abilities %}
+            <li>{{ ability }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
